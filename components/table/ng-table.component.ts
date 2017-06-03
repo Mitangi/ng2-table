@@ -27,7 +27,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
         </td>
       </tr>
         <tr *ngFor="let row of rows">
-          <td  *ngFor="let column of columns" [innerHtml]="sanitize(getData(row, column.name))"></td>
+          <td (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp($event,row, column.name)"  *ngFor="let column of columns" [innerHtml]="sanitize(getData(row, column.name))"></td>
         </tr>
       </tbody>
     </table>
@@ -52,7 +52,13 @@ export class NgTableComponent {
   @Output() public tableChanged:EventEmitter<any> = new EventEmitter();
   @Output() public cellClicked:EventEmitter<any> = new EventEmitter();
 
+   @Output() public mouseDown:EventEmitter<any> = new EventEmitter();
+   @Output() public mouseUp:EventEmitter<any> = new EventEmitter();
+
   public showFilterRow:Boolean = false;
+
+  name:any;
+  timeoutHandler: any;
 
   @Input()
   public set columns(values:Array<any>) {
@@ -118,5 +124,27 @@ export class NgTableComponent {
 
   public cellClick(row:any, column:any):void {
     this.cellClicked.emit({row, column});
+  }
+   public onMouseUp(e:any,row:any, column:any) {
+    if(this.timeoutHandler) {
+      clearTimeout(this.timeoutHandler);
+      this.name = "canceled";
+      this.timeoutHandler=null;  
+      this.cellClicked.emit({row, column});
+    } 
+    var sel = window.getSelection();
+    for (var i = 0, len = this.name.length; i < len; ++i) {
+          sel.addRange(this.name[i]);
+        }
+     return false;
+  }
+ 
+  public onMouseDown(e:any) {
+    this.timeoutHandler = setTimeout(() => {
+      this.name =window.getSelection().toString();
+      this.timeoutHandler = null; 
+      if(e.stopPropagation) e.stopPropagation();
+      if(e.preventDefault) e.preventDefault();    
+    }, 500) ;
   }
 }
