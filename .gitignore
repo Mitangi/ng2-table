@@ -10,9 +10,7 @@ npm-debug.log
 .idea
 
 # ignore build and dist for now
-/bundles
 /demo-build
-/dist
 /coverage
 /ts
 
@@ -20,16 +18,6 @@ npm-debug.log
 /demo/**/*.js.map
 /demo/**/*.d.ts
 !/demo/custom-typings.d.ts
-/components/**/*.js
-/components/**/*.js.map
-/components/**/*.d.ts
-ng2-table.js
-ng2-table.js.map
-ng2-table.d.ts
 
 /logs
 
-factories
-
-/**/*.metadata.json
-/**/*.ngfactory.ts
