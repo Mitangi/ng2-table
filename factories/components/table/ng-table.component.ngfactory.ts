@@ -210,7 +210,7 @@ class _View_NgTableComponent0 extends import1.AppView<import3.NgTableComponent> 
   }
 }
 export function viewFactory_NgTableComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.NgTableComponent> {
-  if ((renderType_NgTableComponent === (null as any))) { (renderType_NgTableComponent = viewUtils.createRenderComponentType('/Users/vishal/Desktop/mitangi/ng2-table/components/table/ng-table.component.ts class NgTableComponent - inline template',0,import9.ViewEncapsulation.None,styles_NgTableComponent,{})); }
+  if ((renderType_NgTableComponent === (null as any))) { (renderType_NgTableComponent = viewUtils.createRenderComponentType('/Users/vishal/Desktop/ng2-table/components/table/ng-table.component.ts class NgTableComponent - inline template',0,import9.ViewEncapsulation.None,styles_NgTableComponent,{})); }
   return new _View_NgTableComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_NgTableComponent1 extends import1.AppView<any> {
