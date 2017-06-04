@@ -131,11 +131,12 @@ export class NgTableComponent {
       this.name = "canceled";
       this.timeoutHandler=null;  
       this.cellClicked.emit({row, column});
-    } 
+    } else{
     var sel = window.getSelection();
     for (var i = 0, len = this.name.length; i < len; ++i) {
           sel.addRange(this.name[i]);
         }
+      }
      return false;
   }
  
