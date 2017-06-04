@@ -128,7 +128,6 @@ export class NgTableComponent {
    public onMouseUp(e:any,row:any, column:any) {
     if(this.timeoutHandler) {
       clearTimeout(this.timeoutHandler);
-      this.name = "canceled";
       this.timeoutHandler=null;  
       this.cellClicked.emit({row, column});
     } else{
