@@ -210,7 +210,7 @@ class _View_NgTableComponent0 extends import1.AppView<import3.NgTableComponent> 
   }
 }
 export function viewFactory_NgTableComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.NgTableComponent> {
-  if ((renderType_NgTableComponent === (null as any))) { (renderType_NgTableComponent = viewUtils.createRenderComponentType('/Users/vishal/Desktop/ng2-table/components/table/ng-table.component.ts class NgTableComponent - inline template',0,import9.ViewEncapsulation.None,styles_NgTableComponent,{})); }
+  if ((renderType_NgTableComponent === (null as any))) { (renderType_NgTableComponent = viewUtils.createRenderComponentType('C:/Users/Laxmi/Documents/mitangi/ng2-table/components/table/ng-table.component.ts class NgTableComponent - inline template',0,import9.ViewEncapsulation.None,styles_NgTableComponent,{})); }
   return new _View_NgTableComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_NgTableComponent1 extends import1.AppView<any> {
@@ -576,24 +576,30 @@ function viewFactory_NgTableComponent6(viewUtils:import4.ViewUtils,parentInjecto
 }
 class _View_NgTableComponent7 extends import1.AppView<any> {
   _el_0:any;
-  /*private*/ _expr_0:any;
+  /*private*/ _expr_1:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_NgTableComponent7,renderType_NgTableComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'td',(null as any));
-    this._expr_0 = import7.UNINITIALIZED;
-    this.init([].concat([this._el_0]),[this._el_0],[],[]);
+    this._expr_1 = import7.UNINITIALIZED;
+    var disposable_0:Function = this.renderer.listen(this._el_0,'click',this.eventHandler(this._handle_click_0_0.bind(this)));
+    this.init([].concat([this._el_0]),[this._el_0],[disposable_0],[]);
     return (null as any);
   }
   detectChangesInternal(throwOnChange:boolean):void {
     this.detectContentChildrenChanges(throwOnChange);
-    const currVal_0:any = this.parent.parent.context.sanitize(this.parent.parent.context.getData(this.parent.context.$implicit,this.context.$implicit.name));
-    if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this.renderer.setElementProperty(this._el_0,'innerHTML',this.viewUtils.sanitizer.sanitize(import20.SecurityContext.HTML,currVal_0));
-      this._expr_0 = currVal_0;
+    const currVal_1:any = this.parent.parent.context.getData(this.parent.context.$implicit,this.context.$implicit.name);
+    if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
+      this.renderer.setElementProperty(this._el_0,'innerHTML',this.viewUtils.sanitizer.sanitize(import20.SecurityContext.HTML,currVal_1));
+      this._expr_1 = currVal_1;
     }
     this.detectViewChildrenChanges(throwOnChange);
+  }
+  private _handle_click_0_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this.parent.parent.context.cellClick($event,this.parent.context.$implicit,this.context.$implicit.name)) !== false);
+    return (true && pd_0);
   }
 }
 function viewFactory_NgTableComponent7(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
